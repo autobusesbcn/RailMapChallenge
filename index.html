@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Rail Map Challenge</title>
+<script src="js/jquery-3.3.1.min.js"></script>
+<style>
+#cf1 {
+  position:absolute;
+ position:absolute; top:0; left:10;
+}
+#cf2 {
+  position:absolute; top:0; left:0;
+  height:800px;
+  width:600px;
+  margin:0 auto;
+}
+#cf2 img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf2 img.transparent {
+opacity:0;
+}
+#cf_onclick_plano1_onclick {
+cursor:pointer;
+}
+</style>
+
+<script>
+$(document).ready(function() {
+  $("#cf_onclick_plano1").click(function() {
+  $("#cf2 img.plano2").toggleClass("transparent");
+  $("#cf2 img.plano3").toggleClass("transparent");
+});
+$("#cf_onclick_plano2").click(function() {
+  $("#cf2 img.plano1").toggleClass("transparent");
+  $("#cf2 img.plano3").toggleClass("transparent");
+});
+$("#cf_onclick_plano3").click(function() {
+  $("#cf2 img.plano1").toggleClass("transparent");
+  $("#cf2 img.plano2").toggleClass("transparent");
+});
+})
+</script>
+	
+</head>
+
+<div id="cf2" class="shadow">
+  <img class="plano1" src="data/plano1.png" />
+  <img class="plano2" src="data/plano2.png" />
+  <img class="plano3" src="data/plano1.png" />
+</div>
+
+<div id="cf1" class="shadow">
+<p id="cf_onclick_plano1">Turista</p>
+<p id="cf_onclick_plano2">Ciutadà</p>
+<p id="cf_onclick_plano3">PMR</p>
+</div>
+
+</html>
