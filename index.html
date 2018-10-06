@@ -28,39 +28,52 @@
 #cf2 img.transparent {
 opacity:0;
 }
+
+#cf2 img.notransparent {
+opacity:1;
+}
+
 #cf_onclick_plano1_onclick {
 cursor:pointer;
 }
 </style>
 
 <script>
+
 $(document).ready(function() {
-  $("#cf_onclick_plano1").click(function() {
-  $("#cf2 img.plano2").toggleClass("transparent");
-  $("#cf2 img.plano3").toggleClass("transparent");
+  $("#cf_onclick_plano1").click( function() {
+  document.getElementById('plano1').className="notransparent";
+  document.getElementById('plano2').className="transparent";
+  document.getElementById('plano3').className="transparent";
+  });
+  
+  $("#cf_onclick_plano2").click( function() {
+  document.getElementById('plano1').className="transparent";
+  document.getElementById('plano2').className="notransparent";
+  document.getElementById('plano3').className="transparent";
+  });
+  
+  $("#cf_onclick_plano3").click( function() {
+  document.getElementById('plano1').className="transparent";
+  document.getElementById('plano2').className="transparent";
+  document.getElementById('plano3').className="notransparent";
+  });
+
 });
-$("#cf_onclick_plano2").click(function() {
-  $("#cf2 img.plano1").toggleClass("transparent");
-  $("#cf2 img.plano3").toggleClass("transparent");
-});
-$("#cf_onclick_plano3").click(function() {
-  $("#cf2 img.plano1").toggleClass("transparent");
-  $("#cf2 img.plano2").toggleClass("transparent");
-});
-})
 </script>
 	
+
 </head>
 
 <div id="cf2" class="shadow">
-  <img class="plano1" src="data/plano1.png" />
-  <img class="plano2" src="data/plano2.png" />
-  <img class="plano3" src="data/plano1.png" />
+  <img id="plano3" class="transparent" src="data/plano3.png" />
+  <img id="plano1" class="transparent" src="data/plano1.png" />
+  <img id="plano2" src="data/plano2.png" />
 </div>
 
 <div id="cf1" class="shadow">
-<p id="cf_onclick_plano1">Turista</p>
 <p id="cf_onclick_plano2">Ciutadà</p>
+<p id="cf_onclick_plano1">Turista</p>
 <p id="cf_onclick_plano3">PMR</p>
 </div>
 
