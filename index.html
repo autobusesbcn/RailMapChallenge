@@ -36,6 +36,16 @@ opacity:1;
 #cf_onclick_plano1_onclick {
 cursor:pointer;
 }
+
+.invert {
+filter: invert(100%);
+}
+
+.noinvert {
+filter: invert(0%);
+}
+
+
 </style>
 
 <script>
@@ -45,18 +55,27 @@ $(document).ready(function() {
   document.getElementById('plano1').className="notransparent";
   document.getElementById('plano2').className="transparent";
   document.getElementById('plano3').className="transparent";
+  document.getElementById('cf_onclick_plano1').className="invert";
+  document.getElementById('cf_onclick_plano2').className="noinvert";
+  document.getElementById('cf_onclick_plano3').className="noinvert";
   });
   
   $("#cf_onclick_plano2").click( function() {
   document.getElementById('plano1').className="transparent";
   document.getElementById('plano2').className="notransparent";
   document.getElementById('plano3').className="transparent";
+  document.getElementById('cf_onclick_plano1').className="noinvert";
+  document.getElementById('cf_onclick_plano2').className="invert";
+  document.getElementById('cf_onclick_plano3').className="noinvert";
   });
   
   $("#cf_onclick_plano3").click( function() {
   document.getElementById('plano1').className="transparent";
   document.getElementById('plano2').className="transparent";
   document.getElementById('plano3').className="notransparent";
+  document.getElementById('cf_onclick_plano1').className="noinvert";
+  document.getElementById('cf_onclick_plano2').className="noinvert";
+  document.getElementById('cf_onclick_plano3').className="invert";
   });
 
 });
@@ -72,9 +91,9 @@ $(document).ready(function() {
 </div>
 
 <div id="cf1" class="shadow">
-<p id="cf_onclick_plano2">Ciutadà</p>
-<p id="cf_onclick_plano1">Turista</p>
-<p id="cf_onclick_plano3">PMR</p>
+<button class="invert" id="cf_onclick_plano2">Ciutadà</button>
+<button class="noinvert" id="cf_onclick_plano1">Turista</button>
+<button class="noinvert" id="cf_onclick_plano3">PMR</button>
 </div>
 
 </html>
