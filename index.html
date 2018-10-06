@@ -55,27 +55,44 @@ $(document).ready(function() {
   document.getElementById('plano1').className="notransparent";
   document.getElementById('plano2').className="transparent";
   document.getElementById('plano3').className="transparent";
+  document.getElementById('plano4').className="transparent";
   document.getElementById('cf_onclick_plano1').className="invert";
   document.getElementById('cf_onclick_plano2').className="noinvert";
   document.getElementById('cf_onclick_plano3').className="noinvert";
+  document.getElementById('cf_onclick_plano4').className="noinvert";
   });
   
   $("#cf_onclick_plano2").click( function() {
   document.getElementById('plano1').className="transparent";
   document.getElementById('plano2').className="notransparent";
   document.getElementById('plano3').className="transparent";
+  document.getElementById('plano4').className="transparent";
   document.getElementById('cf_onclick_plano1').className="noinvert";
   document.getElementById('cf_onclick_plano2').className="invert";
   document.getElementById('cf_onclick_plano3').className="noinvert";
+  document.getElementById('cf_onclick_plano4').className="noinvert";
   });
   
   $("#cf_onclick_plano3").click( function() {
   document.getElementById('plano1').className="transparent";
   document.getElementById('plano2').className="transparent";
   document.getElementById('plano3').className="notransparent";
+  document.getElementById('plano4').className="transparent";
   document.getElementById('cf_onclick_plano1').className="noinvert";
   document.getElementById('cf_onclick_plano2').className="noinvert";
   document.getElementById('cf_onclick_plano3').className="invert";
+  document.getElementById('cf_onclick_plano4').className="noinvert";
+  });
+  
+  $("#cf_onclick_plano4").click( function() {
+  document.getElementById('plano1').className="transparent";
+  document.getElementById('plano2').className="transparent";
+  document.getElementById('plano3').className="transparent";
+  document.getElementById('plano4').className="notransparent";
+  document.getElementById('cf_onclick_plano1').className="noinvert";
+  document.getElementById('cf_onclick_plano2').className="noinvert";
+  document.getElementById('cf_onclick_plano3').className="noinvert";
+  document.getElementById('cf_onclick_plano4').className="invert";
   });
 
 });
@@ -86,6 +103,7 @@ $(document).ready(function() {
 
 <div id="cf2" class="shadow">
   <img id="plano3" class="transparent" src="data/plano3.png" />
+  <img id="plano4" class="transparent" src="data/plano4.png" />
   <img id="plano1" class="transparent" src="data/plano1.png" />
   <img id="plano2" src="data/plano2.png" />
 </div>
@@ -94,6 +112,7 @@ $(document).ready(function() {
 <button class="invert" id="cf_onclick_plano2">Ciutadà</button>
 <button class="noinvert" id="cf_onclick_plano1">Turista</button>
 <button class="noinvert" id="cf_onclick_plano3">PMR</button>
+<button class="noinvert" id="cf_onclick_plano4">Bici</button>
 </div>
 
 </html>
